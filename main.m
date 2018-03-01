@@ -2,12 +2,12 @@
 % Based on model described in le Roux et al. (2013), available at
 % http://dx.doi.org/10.1016/j.mineng.2012.10.009
 
-% Developed by BJ Wakefield and L Auret, 2015
+% Developed by BJ Wakefield and L Auret, 2015, 2017
 % Presented at MEi Comminution, Cape Town, 2016
-% Updated by JT McCoy, 2017
-% Submitted to Minerals Engineering, 2017
+% Updated by JT McCoy, 2017, 2018
+% Accepted by Minerals Engineering, 2018
 
-% Copyright (C) 2015, 2016, 2017 L Auret, BJ Wakefield, JT McCoy
+% Copyright (C) 2015, 2016, 2017, 2018 L Auret, BJ Wakefield, JT McCoy
 % Contact: lauret[at]sun.ac.za
 
 % This file is part of the SAG Mill Simulator program.
@@ -16,12 +16,12 @@
 % it under the terms of the GNU General Public License as published by
 % the Free Software Foundation, either version 3 of the License, or
 % (at your option) any later version.
-%     
+%
 % This program is distributed in the hope that it will be useful,
 % but WITHOUT ANY WARRANTY; without even the implied warranty of
 % MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 % GNU General Public License for more details.
-%   
+%
 % You should have received a copy of the GNU General Public License
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -36,30 +36,35 @@ close all; clear; clc;
 % User selects modes:
 % 1 - load particle size estimate sensor error data
 % 2 - load mill liner wear fault data
-% 3 - run Simulink simulation of circuit
+% 3 - load fault-free data
+% 4 - run Simulink simulation of circuit
 loadmode = 1;
 
-% If loadmode == 3, user must also specify simulation modes:
+% If loadmode == 4, user must also specify simulation modes:
+
 % 1 - simulate particle size estimate sensor error data
 % 2 - simulate mill liner wear fault data
 % 3 - run simulation with no faults
-mode = 3;
+faultmode = 1;
 % User must also specify seed for random walks. This seed determines the
 % seeds for random number generators in Simulink. A given seed will always
 % generate the same (pseudo)random walks for the model, allowing the user
 % to reproduce simulations. The data used in the paper was generated with a
-% seed value of 0.
-seed = 0;   % Seed for the random walks
+% seed value of 1.
+RandomSeedNumber = 1;   % Seed for the random walks
 
 switch loadmode
 	case 1
-        load PSEfault;
+        load DataPSEfault;
         disp('Loading data for PSE fault simulation')
     case 2
-        load MLWfault;
+        load DataMLWfault;
         disp('Loading data for Mill liner wear fault simulation')
     case 3
-        run 'SAGmillrun.m'
+        load DataNofault;
+        disp('Loading data for fault-free simulation')
+    case 4
+        run 'generate_data_SAGmill.m'
 end
 
 %% Specify time vector units and define indices for data ranges
