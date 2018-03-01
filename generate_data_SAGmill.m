@@ -54,7 +54,6 @@ fault = faultsvec(faultmode); % faultmode specified in main.m
 
 fault_time = 24*104; % default 90 days NOC, 14 days NOC test
 stop_time = 24*30+fault_time; % default 30 days fault data
-subsample = 100;
 
 %% Run simulation
 clear options;
