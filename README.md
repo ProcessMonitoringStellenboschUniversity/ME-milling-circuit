@@ -7,7 +7,8 @@ Based on model described in le Roux et al. (2013), available at http://dx.doi.or
 Developed by BJ Wakefield and L Auret, 2015, 2017
 Presented at MEi Comminution, Cape Town, 2016
 Updated by JT McCoy, 2017, 2018
-Accepted by Minerals Engineering, 2018
+
+Paper available at Minerals Engineering, 2018: https://doi.org/10.1016/j.mineng.2018.02.007
 
 Copyright (C) 2015, 2016, 2017, 2018 L Auret, BJ Wakefield, JT McCoy
 Contact: lauret[at]sun.ac.za
