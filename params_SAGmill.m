@@ -146,7 +146,8 @@ options.control_system.TI2 = 9.46;
 options.control_system.tauf2 = 0.02;
 %PSE controller
 options.control_system.PSE_SP = options.initial_state.PSE;
-options.control_system.K3 = 928.6; 
+% options.control_system.K3 = 928.6; 
+options.control_system.K3 = 0;
 options.control_system.TI3 = 4.54;
 options.control_system.tauf3 = 0.02;
 
@@ -228,7 +229,7 @@ options.faults.liner_time_off = stop_time;
         options.faults.liner = 1; %Activate fault
         options.faults.liner_time_on = fault_time; %Set fault start time
     end
-options.faults.liner_powerloss = 0.15; %Maximal loss in power transfer to charge 
+options.faults.liner_powerloss = 0.25; %Maximal loss in power transfer to charge 
 options.faults.liner_powerloss_gradient = 1/(24*30*1); %Increase in fraction of maximal powerloss per hour (default maximal powerloss in 1 months)
 
 %SIMULATION OPTIONS

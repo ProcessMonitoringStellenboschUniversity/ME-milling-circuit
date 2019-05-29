@@ -34,7 +34,7 @@ figure;
 subplot(5,1,1);
 hold on
 plot(tout(ind(1:indf)),CFF_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),CFF_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),CFF_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 300 500]);
 xlabel('t [days]'), ylabel('CFF [m^3/h]');
@@ -43,7 +43,7 @@ xlabel('t [days]'), ylabel('CFF [m^3/h]');
 subplot(5,1,2);
 hold on
 plot(tout(ind(1:indf)),MFS_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),MFS_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),MFS_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 55 75]);
 xlabel('t [days]'), ylabel('MFS [t/h]');
@@ -52,7 +52,7 @@ xlabel('t [days]'), ylabel('MFS [t/h]');
 subplot(5,1,3);
 hold on
 plot(tout(ind(1:indf)),SFW_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),SFW_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),SFW_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 100 250]);
 xlabel('t [days]'), ylabel('SFW [m^3/h]');
@@ -61,7 +61,7 @@ xlabel('t [days]'), ylabel('SFW [m^3/h]');
 subplot(5,1,4);
 hold on
 plot(tout(ind(1:indf)),alpha_r_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),alpha_r_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),alpha_r_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 0.4 0.55]);
 xlabel('t [days]'), ylabel('\alpha_r [Fract]');
@@ -70,7 +70,7 @@ xlabel('t [days]'), ylabel('\alpha_r [Fract]');
 subplot(5,1,5);
 hold on
 plot(tout(ind(1:indf)),phi_f_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),phi_f_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),phi_f_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 25 35]);
 xlabel('t [days]'), ylabel('\phi_f [kWh/t]');
@@ -81,7 +81,7 @@ figure;
 subplot(5,1,1);
 hold on
 plot(tout(ind(1:indf)),SVOL_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),SVOL_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),SVOL_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 5 8]);
 xlabel('t [days]'), ylabel('SVOL [m^3]');
@@ -90,7 +90,7 @@ xlabel('t [days]'), ylabel('SVOL [m^3]');
 subplot(5,1,2);
 hold on
 plot(tout(ind(1:indf)),JT_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),JT_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),JT_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 0.25 0.45]);
 xlabel('t [days]'), ylabel('JT [Fract]');
@@ -99,7 +99,7 @@ xlabel('t [days]'), ylabel('JT [Fract]');
 subplot(5,1,3);
 hold on
 plot(tout(ind(1:indf)),Pmill_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),Pmill_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),Pmill_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 1100 1250]);
 xlabel('t [days]'), ylabel('P_m_i_l_l [kW]');
@@ -108,7 +108,7 @@ xlabel('t [days]'), ylabel('P_m_i_l_l [kW]');
 subplot(5,1,4);
 hold on
 plot(tout(ind(1:indf)),CFD_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),CFD_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),CFD_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 1.6 1.8]);
 xlabel('t [days]'), ylabel('CFD [t/m^3]');
@@ -117,7 +117,7 @@ xlabel('t [days]'), ylabel('CFD [t/m^3]');
 subplot(5,1,5);
 hold on
 plot(tout(ind(1:indf)),PSE_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),PSE_out(ind(indf:end)),'Color',[0.7 0.7 0.7])
+plot(tout(ind(indf:end)),PSE_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
-axis([0 tout(end) 0.6 0.75]);
+axis([0 tout(end) 0.6 0.85]);
 xlabel('t [days]'), ylabel('PSE [Fract]');
