@@ -39,14 +39,14 @@ close all; clear; clc;
 % 2 - load mill liner wear fault data
 % 3 - load fault-free data
 % 4 - run Simulink simulation of circuit
-loadmode = 1;
+loadmode = 4;
 
 % If loadmode == 4, user must also specify simulation modes:
 
 % 1 - simulate particle size estimate sensor error data
 % 2 - simulate mill liner wear fault data
 % 3 - run simulation with no faults
-faultmode = 1;
+faultmode = 3;
 % User must also specify seed for random walks. This seed determines the
 % seeds for random number generators in Simulink. A given seed will always
 % generate the same (pseudo)random walks for the model, allowing the user
