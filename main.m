@@ -46,7 +46,7 @@ loadmode = 4;
 % 1 - simulate particle size estimate sensor error data
 % 2 - simulate mill liner wear fault data
 % 3 - run simulation with no faults
-faultmode = 2;
+faultmode = 3;
 % User must also specify seed for random walks. This seed determines the
 % seeds for random number generators in Simulink. A given seed will always
 % generate the same (pseudo)random walks for the model, allowing the user
@@ -71,12 +71,12 @@ end
 %% Specify time vector units and define indices for data ranges
 tout = tout/24; % convert units to [days]
 
-% NOC data - first 90 days
-% test data - next 14 days
-% fault data - next 30 days
+% NOC data - first 30 days
+% test data - next 15 days
+% fault data - next 15 days
 
 % Indices for Samples before fault starts:
-% 90 days x 24 hours per day x 60 minutes per hour x 2 samples per minute
+% 45 days x 24 hours per day x 60 minutes per hour x 2 samples per minute
 tNOCStart = 1;
 tNOCEnd = tNOCStart + 30*24*60*2;
 tTestStart = tNOCEnd + 1;
@@ -94,5 +94,5 @@ run 'displaytimeplots.m';
 
 %% Compile data into matrix, specify variable names
 % 0-tout,1-CFF,2-MFS,3-SFW,4-SVOL,5-JT,6-Pmill,7-CFD,8-PSE
-datagen = horzcat(tout,CFF_out,MFS_out,SFW_out,SVOL_out,JT_out,Pmill_out,CFD_out,PSE_out);
-names = {'CFF','MFS','SFW','SVOL','JT','Pmill','CFD','PSE'};
+datagen = horzcat(tout,CFF_out,MFS_out,SFW_out,SVOL_out,JT_out,Pmill_out,CFD_out,PSE_out,MIW_out);
+names = {'CFF','MFS','SFW','SVOL','JT','Pmill','CFD','PSE','MIW'};

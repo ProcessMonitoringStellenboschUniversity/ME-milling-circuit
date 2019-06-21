@@ -31,7 +31,7 @@
 %% PROCESS INPUTS
 figure;
 %Cyclone feed flow rate
-subplot(5,1,1);
+subplot(6,1,1);
 hold on
 plot(tout(ind(1:indf)),CFF_out(ind(1:indf)),'k')
 plot(tout(ind(indf:end)),CFF_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
@@ -40,7 +40,7 @@ axis([0 tout(end) 300 500]);
 xlabel('t [days]'), ylabel('CFF [m^3/h]');
 
 %Mill feed solids
-subplot(5,1,2);
+subplot(6,1,2);
 hold on
 plot(tout(ind(1:indf)),MFS_out(ind(1:indf)),'k')
 plot(tout(ind(indf:end)),MFS_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
@@ -49,7 +49,7 @@ axis([0 tout(end) 55 75]);
 xlabel('t [days]'), ylabel('MFS [t/h]');
 
 %Sump feed water
-subplot(5,1,3);
+subplot(6,1,3);
 hold on
 plot(tout(ind(1:indf)),SFW_out(ind(1:indf)),'k')
 plot(tout(ind(indf:end)),SFW_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
@@ -58,7 +58,7 @@ axis([0 tout(end) 100 250]);
 xlabel('t [days]'), ylabel('SFW [m^3/h]');
 
 %Fraction rocks in feed ore
-subplot(5,1,4);
+subplot(6,1,4);
 hold on
 plot(tout(ind(1:indf)),alpha_r_out(ind(1:indf)),'k')
 plot(tout(ind(indf:end)),alpha_r_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
@@ -67,13 +67,22 @@ axis([0 tout(end) 0.4 0.55]);
 xlabel('t [days]'), ylabel('\alpha_r [Fract]');
 
 %Power needed per tonne of fines produced
-subplot(5,1,5);
+subplot(6,1,5);
 hold on
 plot(tout(ind(1:indf)),phi_f_out(ind(1:indf)),'k')
 plot(tout(ind(indf:end)),phi_f_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
 hold off
 axis([0 tout(end) 25 35]);
 xlabel('t [days]'), ylabel('\phi_f [kWh/t]');
+
+%Mill inlet water
+subplot(6,1,6);
+hold on
+plot(tout(ind(1:indf)),MIW_out(ind(1:indf)),'k')
+plot(tout(ind(indf:end)),MIW_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
+hold off
+axis([0 tout(end) 3 8]);
+xlabel('t [days]'), ylabel('MIW [m^3/h]');
 
 %% PROCESS OUTPUTS
 figure;

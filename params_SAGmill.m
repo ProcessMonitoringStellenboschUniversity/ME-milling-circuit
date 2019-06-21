@@ -157,6 +157,7 @@ options.process_noise.time_on = 50;
 options.process_noise.time_off = stop_time;
 %Mill inlet water
 options.process_noise.gradient_MIW = 0; 
+options.process_noise.MIW_randomwalk = 1; % set to 0 for initial walk, set to >0 for steady state (and therefore a manipulatable variable)
 options.process_noise.seed_MIW = seeds(1); %Random seed
 options.process_noise.sample_MIW = 0.5; %Period for gradient changes (hours)
 options.process_noise.UB_MIW = 1.05*options.initial_state.MIW; %Upper bound of variation
