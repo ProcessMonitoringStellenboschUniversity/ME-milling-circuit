@@ -133,7 +133,7 @@ PSE_out = PSE_out.*mask;
 
 missing_rate = 0.5; % of values missing (replaced with NaN)
 
-outlier_rate = 1; % of values replaced with an outlier
+outlier_rate = 0.5; % of values replaced with an outlier
 outlier_max = 30; % max outlier value is 30% error
 outlier_min = 60; % min outlier value is 60% of actual value
 
@@ -224,4 +224,8 @@ dict.PSE = PSE_temp;
 % hold off;
 
 %% Save outputs to a .mat file:
-save('MMM2019_training_data.mat','dict');
+if RandomSeedNumber == 1
+    save('MMM2019_training_data.mat','dict');
+else
+    save('MMM2019_test_data.mat','dict');
+end

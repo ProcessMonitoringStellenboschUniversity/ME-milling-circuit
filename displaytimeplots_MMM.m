@@ -30,37 +30,25 @@ indf = find(tout(ind)==45);
 figure;
 %Cyclone feed flow rate
 subplot(4,1,1);
-hold on
-plot(tout(ind(1:indf)),CFF_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),CFF_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
-hold off
+plot(tout,CFF_out,'k')
 axis([0 tout(end) 300 500]);
 xlabel('t [days]'), ylabel('CFF [m^3/h]');
 
 %Mill feed solids
 subplot(4,1,2);
-hold on
-plot(tout(ind(1:indf)),MFS_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),MFS_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
-hold off
+plot(tout,MFS_out,'k')
 axis([0 tout(end) 55 75]);
 xlabel('t [days]'), ylabel('MFS [t/h]');
 
 %Sump feed water
 subplot(4,1,3);
-hold on
-plot(tout(ind(1:indf)),SFW_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),SFW_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
-hold off
+plot(tout,SFW_out,'k')
 axis([0 tout(end) 100 250]);
 xlabel('t [days]'), ylabel('SFW [m^3/h]');
 
 %Mill inlet water
 subplot(4,1,4);
-hold on
-plot(tout(ind(1:indf)),MIW_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),MIW_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
-hold off
+plot(tout,MIW_out,'k')
 axis([0 tout(end) 3 8]);
 xlabel('t [days]'), ylabel('MIW [m^3/h]');
 
@@ -68,36 +56,25 @@ xlabel('t [days]'), ylabel('MIW [m^3/h]');
 figure;
 %Sump volume
 subplot(5,1,1);
-hold on
-plot(tout(ind(1:indf)),SVOL_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),SVOL_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
-hold off
+plot(tout,SVOL_out,'k')
 axis([0 tout(end) 5 8]);
 xlabel('t [days]'), ylabel('SVOL [m^3]');
 
 %Mill charge
 subplot(5,1,2);
-hold on
-plot(tout(ind(1:indf)),JT_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),JT_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
-hold off
+plot(tout,JT_out,'k')
 axis([0 tout(end) 0.25 0.45]);
 xlabel('t [days]'), ylabel('JT [Fract]');
 
 %Mill power draw
 subplot(5,1,3);
-hold on
-plot(tout(ind(1:indf)),Pmill_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),Pmill_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
-hold off
+plot(tout,Pmill_out,'k')
 axis([0 tout(end) 1100 1250]);
 xlabel('t [days]'), ylabel('P_m_i_l_l [kW]');
 
 %Cyclone feed density
 subplot(5,1,4);
-hold on
-plot(tout(ind(1:indf)),CFD_out(ind(1:indf)),'k')
-plot(tout(ind(indf:end)),CFD_out(ind(indf:end)),'Color',[0.5 0.5 0.5])
+plot(tout,CFD_out,'k')
 hold off
 axis([0 tout(end) 1.6 1.8]);
 xlabel('t [days]'), ylabel('CFD [t/m^3]');
