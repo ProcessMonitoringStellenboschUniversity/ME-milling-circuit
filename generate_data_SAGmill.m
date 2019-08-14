@@ -33,7 +33,7 @@
 %   (1) Specify the faults to be simulated in the 'faults' variable
 %   (cell array) (defined in main.m)
 %   (2) Specify the time in hours at which the fault manifests in
-%   fault_time (default is 90 days).
+%   fault_time (default is 104 days).
 %   (3) Specify the time in hours at which the simulation ends in
 %   stop_time (default is 30 days after fault_time).
 %
@@ -52,8 +52,8 @@
 faultsvec = {'pse sensor','liner wear','no fault'};
 fault = faultsvec(faultmode); % faultmode specified in main.m
 
-fault_time = 24*104; % default 90 days NOC, 14 days NOC test
-stop_time = 24*30+fault_time; % default 30 days fault data
+fault_time = 24*45; % default 30 days NOC, 15 days NOC test
+stop_time = 24*15+fault_time; % default 15 days fault data
 
 %% Run simulation
 clear options;
@@ -82,6 +82,7 @@ clear A element_list element idx_element time idx_del logsout;
 tout = (data.time);
 CFF_out = (data.CFF);
 MFS_out = (data.MFS);
+MIW_out = (data.MIW);
 SFW_out = (data.SFW);
 SVOL_out = (data.SVOL);
 JT_out = (data.JT);
@@ -101,5 +102,5 @@ end
 
 %% Save data
 savefile = strcat('SimData',int2str(RandomSeedNumber),faultname);
-save(savefile,'tout','CFF_out','MFS_out','SFW_out','SVOL_out','JT_out','Pmill_out','CFD_out','PSE_out','alpha_r_out','phi_f_out');
+save(savefile,'tout','CFF_out','MFS_out','SFW_out','SVOL_out','JT_out','Pmill_out','CFD_out','PSE_out','alpha_r_out','phi_f_out','MIW_out');
 fprintf('Run completed at %s\n',datestr(now));

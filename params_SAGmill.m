@@ -146,7 +146,8 @@ options.control_system.TI2 = 9.46;
 options.control_system.tauf2 = 0.02;
 %PSE controller
 options.control_system.PSE_SP = options.initial_state.PSE;
-options.control_system.K3 = 928.6; 
+% options.control_system.K3 = 928.6; 
+options.control_system.K3 = 0;
 options.control_system.TI3 = 4.54;
 options.control_system.tauf3 = 0.02;
 
@@ -156,6 +157,7 @@ options.process_noise.time_on = 50;
 options.process_noise.time_off = stop_time;
 %Mill inlet water
 options.process_noise.gradient_MIW = 0; 
+options.process_noise.MIW_randomwalk = 1; % set to 0 for initial walk, set to >0 for steady state (and therefore a manipulatable variable)
 options.process_noise.seed_MIW = seeds(1); %Random seed
 options.process_noise.sample_MIW = 0.5; %Period for gradient changes (hours)
 options.process_noise.UB_MIW = 1.05*options.initial_state.MIW; %Upper bound of variation
@@ -228,7 +230,7 @@ options.faults.liner_time_off = stop_time;
         options.faults.liner = 1; %Activate fault
         options.faults.liner_time_on = fault_time; %Set fault start time
     end
-options.faults.liner_powerloss = 0.15; %Maximal loss in power transfer to charge 
+options.faults.liner_powerloss = 0.25; %Maximal loss in power transfer to charge 
 options.faults.liner_powerloss_gradient = 1/(24*30*1); %Increase in fraction of maximal powerloss per hour (default maximal powerloss in 1 months)
 
 %SIMULATION OPTIONS
