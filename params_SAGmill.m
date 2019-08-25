@@ -237,4 +237,6 @@ options.faults.liner_powerloss_gradient = 1/(24*30*1); %Increase in fraction of 
 options.simulation.errortol = 1e-5; %Error tolerance
 options.simulation.stoptime = stop_time; %Time to end simulation
 options.simulation.sampling = 30/3600; %Sensor sampling rate (default 1 sample every 30 sec)
+windowSize = 30*2; % using a 1/2hr smoothing window
+options.simulation.coeff = ones(1, windowSize)/windowSize;
 end
